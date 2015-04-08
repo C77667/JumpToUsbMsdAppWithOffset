@@ -24,7 +24,7 @@ https://github.com/pixelmatix/JumpToAppWithOffset
     * This command loads the two hex files, which are in non-overlapping sections of memory, and creates a new .hex file containing both applications.
 * Open `JumpToUsbMsdApp.hex` in Teensy Loader
 * Press button to load to Teensy
-* Observe two fast blinks from JumpToUsbMsdAppWithOffset, then the light may turn off or stay on (the SmartMatrix pinout ends up driving the LED from SPI activity).  If your SD card was connected properly, the drive showing up on your computer
+* Observe two fast blinks from JumpToUsbMsdAppWithOffset, then the light may turn off or stay on (the SmartMatrix pinout ends up driving the LED from SPI activity).  If your SD card was connected properly, the drive should show up on your computer.
 
 ## USB-MSD Application
 Application is configured to share the SD card as a USB-MSD drive.  Disconnecting USB (while keeping power connected) triggers a reset of the microcontroller, which can be a way to jump back to the Arduino application.
