@@ -1,6 +1,6 @@
 Update the contents of an SD card connected to the Teensy without removing the card or reprogramming Flash
 
-This simple example shows an Arduino application with a blinking LED jumping to a uTasker application that shares a connected SD card over USB-MSD.
+This simple example shows an Arduino application with a blinking LED jumping to a [uTasker](http://www.utasker.com/) application that shares a connected SD card over USB-MSD.
 
 This example is a specific use case of the technique of storing two applications into the Teensy 3.1's flash, and jumping between them.  More details are available here:  
 https://github.com/pixelmatix/JumpToAppWithOffset
@@ -63,6 +63,6 @@ uTaskerUsbMsd*.hex is the default uTasker application included with V1.4.7 with 
 * Add RESET_ON_SUSPEND option reseting chip on USB suspend
 
 The binary was compiled with Kinetis Design Studio.
-A uTasker license was purchased for this project.  In keeping with the terms of the uTasker license, this binary can only be used for a non-commercial project.  If you want to use this project for a commercial project, uTasker has reasonable rates and excellent support.  You should compile the project yourself to customize the USB IDs and information.
+A uTasker license was purchased for this project.  In keeping with the terms of the uTasker license, this binary can only be used for a non-commercial project.  If you want to use this project for a commercial project, uTasker has [reasonable license fees](http://www.utasker.com/Licensing/License.html) and excellent support.  You should compile the project yourself to customize the USB IDs and device information.
 
-I do plan on open sourcing the minor changes I made to the uTasker project, most likely as a diff against the uTasker V1.4.7 release published on uTasker's site.
+I do plan on open sourcing the minor changes I made to the uTasker project, most likely as a diff that can be used with the uTasker V1.4.7 release published on uTasker's site.
