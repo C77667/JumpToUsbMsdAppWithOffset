@@ -40,12 +40,16 @@ Known Issues:
 * A13 is set to pull-up
 
 **SmartMatrix Configuration:**
+Intended to be used with the [SmartMatrix Shield](http://docs.pixelmatix.com/SmartMatrix/shieldref.html)
+
 * SPI_CS pin 15 (C0)
 * SPI_SCK pin 13 (C5)
 * SPI_MOSI pin 11 (C6)
 * SPI_MISO pin 12 (C7)
 
 **AudioBoard Configuration**
+Intended to be used with the [Teensy Audio Adapter Board](https://www.pjrc.com/store/teensy3_audio.html)
+
 * SPI_CS pin 10 (C4)
 * SPI_SCK pin 14 (D1)
 * SPI_MOSI pin 7 (D2)
