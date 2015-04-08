@@ -38,15 +38,6 @@ int led = 13;
 #ifdef __cplusplus
 extern "C" {
 #endif
-// TODO: make a generic jump function that takes the address as a variable
-void jumpToApplicationAt0x8080() {
-  /* Load stack pointer and program counter from start of new program */
-  asm("movw r0, #0x8080");
-  asm("ldr sp, [r0]");
-  asm("ldr pc, [r0, #4]");
-}
-
-// if jumping to an address at 0x10000 or higher, need to load 32-bits into r0
 void jumpToApplicationAt0x38080() {
   /* Load stack pointer and program counter from start of new program */
   asm("movw r0, #0x8080");
@@ -97,7 +88,7 @@ void startup_late_hook(void) {
     // set peripherals (mostly) back to normal then jump
     __disable_irq();
     resetPeripherals();
-    jumpToApplicationAt0x8080();
+    jumpToApplicationAt0x38080();
   }
 }
 #ifdef __cplusplus
