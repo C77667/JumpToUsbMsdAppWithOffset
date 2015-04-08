@@ -13,7 +13,7 @@ This simple example shows an Arduino application with a blinking LED jumping to 
 
 * Load JumpToUsbMsdAppWithOffset sketch and compile
 * Navigate to the directory holding the .hex file that was generated (you can find this directory in the Arduino build console).
-* Copy one of the `uTaskerUsbMsd*.hex` into the Arduino build directory - `uTaskerUsbMsd-SmartMatrix.hex` or `uTaskerUsbMsd-AudioBoard.hex` depending on the pinout of the SD card attached.
+* Copy one of the `uTaskerUsbMsd*.hex` files into the Arduino build directory - `uTaskerUsbMsd-SmartMatrix.hex` or `uTaskerUsbMsd-AudioBoard.hex` depending on the pinout of the SD card attached.
 * From command line in build directory, run one command depending on the uTasker .hex file copied:
 	* `srec_cat JumpToUsbMsdAppWithOffset.cpp.hex -Intel uTaskerUsbMsd-SmartMatrix.hex -Intel -Output JumpToUsbMsdApp.hex -Intel`  
 	or
@@ -27,20 +27,20 @@ This simple example shows an Arduino application with a blinking LED jumping to 
 Application is configured to share the SD card as a USB-MSD drive.  Disconnecting USB (while keeping power connected) triggers a reset of the microcontroller, which can be a way to jump back to the Arduino application.
 
 ### Pins used:
-Teensy pins 0/1 TX/RX for serial debug
-A13 is set to pull-up
+* Teensy pins 0/1 are TX/RX for serial debug
+* A13 is set to pull-up
 
 **SmartMatrix Configuration:**
-SPI_CS C0 15
-SCK C5 13
-MOSI C6 11
-MISO C7 12
+* SPI_CS pin 15 (C0)
+* SPI_SCK pin 13 (C5)
+* SPI_MOSI pin 11 (C6)
+* SPI_MISO pin 12 (C7)
 
 **AudioBoard Configuration**
-SPI_CS C4 10
-SCK D1 14
-MOSI D2 7
-MISO C7 12
+* SPI_CS pin 10 (C4)
+* SPI_SCK pin 14 (D1)
+* SPI_MOSI pin 7 (D2)
+* SPI_MISO pin 12 (C7)
 
 ### uTasker Compilation/License
 uTaskerUsbMsd*.hex is the default uTasker application included with V1.4.7 with some modifications:
