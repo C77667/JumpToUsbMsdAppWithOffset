@@ -13,13 +13,13 @@ This simple example shows an Arduino application with a blinking LED jumping to 
 
 * Load JumpToUsbMsdAppWithOffset sketch and compile
 * Navigate to the directory holding the .hex file that was generated (you can find this directory in the Arduino build console).
-* Copy one of the uTaskerUsbMsd*.hex into the Arduino build directory - uTaskerUsbMsd-SmartMatrix.hex or uTaskerUsbMsd-AudioBoard.hex depending on the pinout of the SD card attached.
+* Copy one of the `uTaskerUsbMsd*.hex` into the Arduino build directory - `uTaskerUsbMsd-SmartMatrix.hex` or `uTaskerUsbMsd-AudioBoard.hex` depending on the pinout of the SD card attached.
 * From command line in build directory, run one command depending on the uTasker .hex file copied:
-	* `srec_cat JumpToUsbMsdAppWithOffset.cpp.hex -Intel uTaskerUsbMsd-SmartMatrix.hex -Intel -Output JumpToUsbMsdApp.hex -Intel`
+	* `srec_cat JumpToUsbMsdAppWithOffset.cpp.hex -Intel uTaskerUsbMsd-SmartMatrix.hex -Intel -Output JumpToUsbMsdApp.hex -Intel`  
 	or
-	* 	srec_cat JumpToUsbMsdAppWithOffset.cpp.hex -Intel uTaskerUsbMsd-AudioBoard.hex -Intel -Output JumpToUsbMsdApp.hex -Intel
+	* 	`srec_cat JumpToUsbMsdAppWithOffset.cpp.hex -Intel uTaskerUsbMsd-AudioBoard.hex -Intel -Output JumpToUsbMsdApp.hex -Intel`
     * This command loads the two hex files, which are in non-overlapping sections of memory, and creates a new .hex file containing both applications.
-* Open JumpToUsbMsdApp.hex in Teensy Loader
+* Open `JumpToUsbMsdApp.hex` in Teensy Loader
 * Press button to load to Teensy
 * Observe two fast blinks from JumpToAppWithOffset, followed by the light turning off, and if your SD card was connected properly, the drive showing up on your computer
 
