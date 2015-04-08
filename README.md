@@ -27,16 +27,16 @@ https://github.com/pixelmatix/JumpToAppWithOffset
 * Observe two fast blinks from JumpToUsbMsdAppWithOffset, then the light may turn off or stay on (the SmartMatrix pinout ends up driving the LED from SPI activity).  If your SD card was connected properly, the drive should show up on your computer.
 
 ## USB-MSD Application
-Application is configured to share the SD card as a USB-MSD drive.  Disconnecting USB (while keeping power connected) triggers a reset of the microcontroller, which can be a way to jump back to the Arduino application.
+The uTasker application is configured to share the SD card as a USB-MSD drive.  Disconnecting USB (while keeping power connected) triggers a reset of the microcontroller, which can be a way to jump back to the Arduino application.
 
 Known Issues:
 
-* Some SD cards can't be recognized, in my case one off-brand card from all the cards tried.
-* Writing to some SD cards is quite slow.  In general writing will be slower than connecting through a card reader to the PC because of the slower speed of the Teensy's USB port.
+* Some SD cards can't be recognized, in my case one off-brand card from all the cards I tried.
+* Writing to some SD cards is quite slow.  In general writing will be slower than connecting through a card reader to the PC because of the slower speed of the Teensy's USB port.  Writing many small files seems slower than writing a single large file.  On most cards I tried, I saw ~50 kB/sec transfer rates for a directory filled with many small files and >1MB/sec for a single large file.  With one off-brand card I saw ~10 kB/sec for the directory full of small files.
 * Fully formatting the SD card on a Mac running OSX 10.10 fails.  "Write Error" is seen on the serial debug, and Disk Utility seems to hang indefinitely.  The SD card needs to be removed and formatted using a card reader.  This may be a problem on other platforms.  Erasing just the partition and not the full card works OK on the same platform.
 
 ### Pins used:
-* Teensy pins 0/1 are TX/RX for serial debug
+* Teensy pins 0/1 are enabled as RX/TX for serial debug
 * A13 is set to pull-up
 
 **SmartMatrix Configuration:**
@@ -61,10 +61,10 @@ uTaskerUsbMsd*.hex is the default uTasker application included with V1.4.7 with 
 * SPI pinout changes
 * Linker script puts application in the last 32k of Flash
 * Disable switch inputs and LED outputs
-* Disable USE_MAINTAINENCE setting to reduce size
+* Disable USE_MAINTAINENCE setting to reduce binary size
 * Disable ADC test cluttering up serial debug
 * Enable pull-up on A13 (needed for SmartMatrix Shield compatibility)
-* Add RESET_ON_SUSPEND option reseting chip on USB suspend
+* Add RESET_ON_SUSPEND option resetting chip on USB suspend
 
 The binary was compiled with Kinetis Design Studio.
 A uTasker license was purchased for this project.  In keeping with the terms of the uTasker license, this binary can only be used for a non-commercial project.  If you want to use this project for a commercial project, uTasker has [reasonable license fees](http://www.utasker.com/Licensing/License.html) and excellent support.  You should compile the project yourself to customize the USB IDs and device information.
