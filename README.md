@@ -1,4 +1,4 @@
-Update the contents of an SD card connected to the Teensy without removing the card or reprogramming Flash
+Update the contents of an SD card connected to the Teensy 3.1 without removing the card or reprogramming Flash
 
 This simple example shows an Arduino application with a blinking LED jumping to a [uTasker](http://www.utasker.com/) application that shares a connected SD card over USB-MSD.
 
