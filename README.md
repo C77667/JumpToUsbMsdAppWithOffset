@@ -29,7 +29,7 @@ https://github.com/pixelmatix/JumpToAppWithOffset
 ## USB-MSD Application
 The uTasker application is configured to share the SD card as a USB-MSD drive.  Disconnecting USB (while keeping power connected) triggers a reset of the microcontroller, which can be a way to jump back to the Arduino application.
 
-Known Issues:
+Known Issues (these are going to be investigated by uTasker pending more details from me):
 
 * Some SD cards can't be recognized, in my case one off-brand card from all the cards I tried.
 * Writing to some SD cards is quite slow.  In general writing will be slower than connecting through a card reader to the PC because of the slower speed of the Teensy's USB port.  Writing many small files seems slower than writing a single large file.  On most cards I tried, I saw ~50 kB/sec transfer rates for a directory filled with many small files and >1MB/sec for a single large file.  With one off-brand card I saw ~10 kB/sec for the directory full of small files.
